@@ -1,0 +1,52 @@
+Timing Information:
+-------------------
+
+Extra Large Array
+-----------------
+Time to run code with push(): 6.3106 ms
+Time to run code with unshift(): 1.3219817 s
+
+Large Array
+-----------
+Time to run code with push(): 1.2485 ms
+Time to run code with unshift(): 14.4383 ms
+
+Medium Array
+------------
+Time to run code with push(): 211.9 μs
+Time to run code with unshift(): 251.4 μs
+
+Small Array
+-----------
+Time to run code with push(): 172.9 μs
+Time to run code with unshift(): 75.2 μs
+
+Tiny Array
+----------
+Time to run code with push(): 157.8 μs
+Time to run code with unshift(): 58.2 μs
+
+
+REPORT
+
+The two functions, doublerAppend and doublerInsert, 
+both aim to double each number in an array but employ 
+different methods for appending the doubled numbers 
+to a new array. doublerAppend uses the push() method, 
+which adds elements to the end of the array, while 
+doublerInsert uses the unshift() method, which adds 
+elements to the beginning of the array. The key difference 
+lies in how these methods interact with array elements. 
+When analyzing the performance results, a noticeable pattern 
+emerges. As the size of the input array increases, the time 
+taken by doublerAppend grows linearly, suggesting O(n) complexity. 
+In contrast, doublerInsert exhibits a much slower growth, 
+indicative of O(n^2) complexity. The reason for the significant 
+performance difference lies in the fact that unshift() involves 
+re-indexing all existing elements in the array, resulting in a 
+quadratic time complexity. Therefore, doublerAppend scales 
+more efficiently as the array size increases.
+
+The slower performance of doublerInsert is attributed to the 
+overhead of re-indexing elements during each iteration, 
+causing a cumulative quadratic time increase as the array size grows.
